@@ -1,0 +1,178 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="sudoku.js"></script>
+  <script type="text/javascript" src="analytics.js"></script>
+  <style type="text/css">
+
+    body { font-family: Calibri, sans-serif; }
+    #container { text-align: center }
+    table { border-collapse: collapse; font-size: 2em; margin: 0 auto; }
+    colgroup, tbody { border: solid medium; }
+    td { border: solid thin; height: 1.4em; width: 1.4em; text-align: center; padding: 0; border-radius: 5px; }
+    button { margin-top: 15px; font-size: 1.5em; }
+    .padd{
+        margin: 70px 104px 12px 644px; 
+        width: 200px; 
+        height: min-content; 
+        background-color: white; 
+        text-decoration: white;
+        border-radius: 10px;
+        padding: 5px 5px 5px 5px;
+        margin:auto;
+        margin-top: 3.5rem;
+        margin-bottom: 3rem;
+      }
+    .button {
+            height: 55px;
+            width: 150px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+    .box {
+        width :auto;
+        background-color: black;
+        border: 2px solid black;
+        padding-bottom: 20px;
+        border-radius: 18px;
+    }
+    .helper{
+        background: white;
+        width: fit-content;
+        height: fit-content;
+    }
+    .text1{
+        text-align: left;
+    }
+    .text{
+        font-family: Calibri, sans-serif;
+        text-align: left;
+        font-size: 1.3em;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container" class="box" >
+
+    <h1 class = "padd" >Sudoku Solver</h1>
+
+    <table id="sudoku-board" >
+
+      <colgroup ><col><col><col>
+      <colgroup ><col><col><col>
+      <colgroup ><col><col><col>
+      <tbody>
+       <tr bgcolor="white" > <td contenteditable="true" ></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+       <tr bgcolor="white" > <td contenteditable="true" ></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>     
+       <tr bgcolor="white"> <td contenteditable="true" ></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+      <tbody>
+       <tr bgcolor="white"> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+       <tr bgcolor="white"> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>     
+       <tr bgcolor="white"> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+      <tbody>
+       <tr bgcolor="white"> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+       <tr bgcolor="white"> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>     
+       <tr bgcolor="white"> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td> <td contenteditable="true"></td>
+    </table>
+    <div>
+      <button id="solve-button" class="button">Solve!</button>
+    </div>
+    <div>
+      <button id="clear-button" class="button">Clear board</button>
+    </div>
+  </div>
+  <div id="container" class="helper" >
+      
+      <h1 class="text1">
+          About SUDOKU :
+      </h1>
+      <p class="text" >A standard Sudoku contains 81 cells, in a 9×9 grid, and has 9 boxes, each box being the intersection of the first, middle, or 
+          last 3 rows, and the first, middle, or last 3 columns. Each cell may contain a number from one to nine, and each number can only 
+          occur once in each row, column, and box.
+      </p>
+        <h1 class="text1">
+            About this Sudoku Solver
+        </h1>
+        <p class="text">
+            This solver help you to solve any sudoku problem within seconds and helps improve your solving skills and practice solving strategies.
+        <p>
+
+    <h1 class="text1">Solve Features</h1>
+    <p class="text">Enter the numbers of the puzzle you want to solve in the grid. You can solve the puzzle completely within seconds.</p>
+    <h3 class="text">
+        Button: Solve
+    </h3>
+    <p class="text">
+        Solves the puzzle completely.
+    </p>
+    <h3 class="text">
+        Button: Clear Board
+    </h3>
+    <p class="text">
+        Clears the board completely.
+    </p>
+
+</div>
+</body>
+
+<script type="text/javascript">
+  document.getElementById("sudoku-board").addEventListener("keyup", function(event) {
+    if(event.target && event.target.nodeName == "TD") {
+      var validNum = /[1-9]/;
+      var tdEl = event.target;
+      if (tdEl.innerText.length > 0 && validNum.test(tdEl.innerText[0])) {
+        tdEl.innerText = tdEl.innerText[0];
+      } else {
+        tdEl.innerText = "";
+      }
+    }
+  });
+
+  document.getElementById("solve-button").addEventListener("click", function(event) {
+    var boardString = boardToString();
+    var solution = SudokuSolver.solve(boardString);
+    if (solution) {
+      stringToBoard(solution);
+    } else {
+      alert("Invalid board!");
+    }
+  })
+
+  document.getElementById("clear-button").addEventListener("click", clearBoard);
+
+  function clearBoard() {
+    var tds = document.getElementsByTagName("td");
+    for (var i = 0; i < tds.length; i++) {
+      tds[i].innerText = "";
+    }
+  }
+
+  function boardToString() {
+    var string = "";
+    var validNum = /[1-9]/;
+    var tds = document.getElementsByTagName("td");
+    for (var i = 0; i < tds.length; i++) {
+      if (validNum.test(tds[i].innerText[0])) {
+        string += tds[i].innerText;
+      } else {
+        string += "-";
+      }
+    }
+    return string;
+  }
+
+  function stringToBoard(string) {
+    var currentCell;
+    var validNum = /[1-9]/;
+    var cells = string.split("");
+    var tds = document.getElementsByTagName("td");
+    for (var i = 0; i < tds.length; i++) {
+      currentCell = cells.shift();
+      if (validNum.test(currentCell)) {
+        tds[i].innerText = currentCell;
+      }
+    }
+  }
+</script>
+</html>
